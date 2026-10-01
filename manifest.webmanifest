@@ -1,0 +1,11 @@
+{
+  "name":"SchulTracker",
+  "short_name":"SchulTracker",
+  "description":"Stundenplan und persönliches Stundenfeedback",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f3f4f6",
+  "theme_color":"#111827",
+  "lang":"de",
+  "icons":[]
+}

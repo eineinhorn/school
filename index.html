@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>SchulTracker</title>
+</head>
+<body>
+<header>
+  <div>
+    <h1>SchulTracker</h1>
+    <p>Deine Stunden, Meldungen & dein Stundenfeedback</p>
+  </div>
+  <button id="installBtn" class="secondary hidden">Installieren</button>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="today">Heute</button>
+  <button class="tab" data-tab="timetable">Stundenplan</button>
+  <button class="tab" data-tab="cycles">2‑Wochen-Zyklen</button>
+  <button class="tab" data-tab="settings">Einstellungen</button>
+</nav>
+
+<main>
+<section id="today" class="page active">
+  <div class="card">
+    <div class="row between wrap">
+      <div>
+        <h2 id="todayTitle">Heute</h2>
+        <div id="weekInfo" class="muted"></div>
+      </div>
+      <input id="datePicker" type="date">
+    </div>
+  </div>
+  <div id="lessonList"></div>
+</section>
+
+<section id="timetable" class="page">
+  <div class="card">
+    <div class="row between wrap">
+      <div>
+        <h2>Stundenplan</h2>
+        <p class="muted">Lege einmal dein A/B‑Muster fest.</p>
+      </div>
+      <button id="addBlockBtn">+ Block</button>
+    </div>
+    <div id="blocksEditor"></div>
+  </div>
+  <div id="scheduleEditor"></div>
+</section>
+
+<section id="cycles" class="page">
+  <div class="card">
+    <h2>2‑Wochen-Zyklen</h2>
+    <p class="muted">Hier siehst du deine eingetragenen Stunden gruppiert nach A/B‑Woche und Zyklus.</p>
+  </div>
+  <div id="cycleList"></div>
+</section>
+
+<section id="settings" class="page">
+  <div class="card">
+    <h2>Einstellungen</h2>
+    <label>Referenzdatum für eine A‑Woche
+      <input id="referenceDate" type="date">
+    </label>
+    <p class="muted small">Das Datum muss ein Montag sein. Jede zweite Woche wechselt automatisch zwischen A und B.</p>
+    <div class="row wrap">
+      <button id="exportBtn" class="secondary">Daten exportieren</button>
+      <label class="fileBtn secondary">Daten importieren<input id="importInput" type="file" accept=".json"></label>
+      <button id="resetBtn" class="danger">Alles löschen</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
